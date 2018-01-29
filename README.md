@@ -30,7 +30,7 @@ Further reading (in Finnish): [Arkkitehtuuriperiaatteet](arkkitehtuuriperiaattee
 Currently implemented modules are listed below. See their repositories for more
 detailed software achitecture description.
 
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/modules.plantuml?4) 
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/modules.plantuml?5) 
 <!-- To invalidate caches change the counter in the url above, i.e. modules.plantuml?13 -> modules.plantuml?14 -->
 
 #### [oda-backend](https://github.com/omahoito/oda-backend) 
@@ -77,6 +77,9 @@ Oda-analytics-service generates dashboard reports from ODA log data.
 
 #### [oda-idp](https://github.com/omahoito/oda-idp)
 ODA OpenID Connect Provider for authenticating and authorizing end users.
+
+#### [oda-media-storage](https://github.com/omahoito/oda-media-storage)
+Provides an API to file storage. Checks authorization using oda-fhir-service. 
 
 ### Information architecture
 
