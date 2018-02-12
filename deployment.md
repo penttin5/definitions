@@ -12,14 +12,14 @@ ODA deployment will consist of three networks:
 Each network will be protected by a firewall. Firewall rules for incoming 
 TCP connections:
 
-| Source | Destination                                          | Ports        |
-| ------ | ---------------------------------------------------- | ------------ |
-| any    | DMZ/API Gateway (pilot environment: 185.166.28.69)        | 80, 443 |
+| Source | Destination                                               | Ports   |
+| ------ | --------------------------------------------------------- | ------- |
+| any    | DMZ/API Gateway                                           | 80, 443 |
 | any    | Control/Jitsi Videobridge   | TCP 80, 443 and 4443, UDP 10000-20000 |
-| any    | DMZ/X-Road Security Server (pilot environment: 185.166.28.70) | 443 |
-| DMZ    | Application VLAN/Microservices                    | 6080-6100 (TBD) |
-| DMZ    | Logging VLAN/Logging Service (Virtual IP)                    | 6084 |
-| Application VLAN | Logging VLAN/Logging Service (Virtual IP)          | 6084 |
+| any    | DMZ/X-Road Security Server                                |     443 |
+| DMZ    | Application VLAN/Microservices                            |   6080- |
+| DMZ    | Logging VLAN/Logging Service (Virtual IP)                 |    6084 |
+| Application VLAN | Logging VLAN/Logging Service (Virtual IP)       |    6084 |
 
 Port 22 (SSH) will be opened to every server to provide remote management 
 access. Additionally, a monitoring server and/or agents will be included in the
@@ -29,11 +29,20 @@ If connections from end user LAN are restricted, access to ODA API Gateway
 ports 443 and 80 (which redirects to 443) must be opened, as well as UPD ports
 10000-20000 for video conferencing. 
 
+*development & proto environment:*
+- API Gateway: 185.166.28.130
+- X-Road Security Server: 185.166.28.131
+
+*alpha/beta environment:*
+- API Gateway: 185.166.28.127
+- Jitsi Videobridge: 85.166.28.70
+- X-Road Security Server: 185.166.28.69
+
 ### Connections from ODA to local services
 
-Source IP for pilot environment is 185.166.28.68.
+Source IP for development/pilot prototype environment is 185.166.28.68.
 
-Source IP for alpha environment is 185.166.28.133.
+Source IP for alpha/beta environment is 185.166.28.133.
 
 Source IP for production environment is to be decided.
 
